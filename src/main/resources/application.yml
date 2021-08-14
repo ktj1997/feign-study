@@ -1,5 +1,7 @@
 server:
   port: 8080
+  app:
+    token: ${SERVER_TOKEN}
 sample:
   api:
     url: "http://localhost:8081/api"
