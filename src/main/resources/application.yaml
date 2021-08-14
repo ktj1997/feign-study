@@ -11,7 +11,8 @@ resilience4j:
       default:
         failureRateThreshold: 50
         slowCallRateThreshold: 50
-        slowCallDurationThreshold: 8000
+        slowCallDurationThreshold: 5000
+        waitDurationInOpenState: 5s
         minimumNumberOfCalls: 5
     instances:
       test-circuit:
@@ -21,3 +22,10 @@ resilience4j:
       test-circuit:
         maxConcurrentCalls: 2
         maxWaitDuration: 0
+  retry:
+    instances:
+      test-circuit:
+        maxRetryAttempts: 3
+        waitDuration: 500ms
+        retryExceptions: [org.springframework.web.client.HttpServerErrorException,io.github.resilience4j.circuitbreaker.Exception]
+
