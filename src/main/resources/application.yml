@@ -5,3 +5,13 @@ server:
 sample:
   api:
     url: "http://localhost:8081/api"
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      failureRateThreshold: 50
+      slowCallRateThreshold: 50
+      slowCallDurationThreshold: 8000
+      minimumNumberOfCalls: 5
+  instances:
+    test-circuit:
+      baseConfig: default

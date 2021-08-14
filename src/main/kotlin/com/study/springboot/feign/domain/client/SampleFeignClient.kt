@@ -2,11 +2,11 @@ package com.study.springboot.feign.domain.client
 
 import com.study.springboot.feign.domain.config.FeignConfiguration
 import com.study.springboot.feign.domain.model.SampleApiDto
-import feign.Headers
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.*
 
-@FeignClient(name = "SampleMsaServer", url = "\${sample.api.url}", configuration = [FeignConfiguration::class])
+@FeignClient(name = "SampleMsaServer", url = "\${sample.api.url}",
+        configuration = [FeignConfiguration::class])
 interface SampleFeignClient {
 
     @GetMapping("/path-variable/{id}")

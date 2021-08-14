@@ -6,4 +6,5 @@ class InternalRequestException(
         val code: String
 ) : RuntimeException() {
     constructor(status: Int, error: ErrorResponse) : this(status, error.message, error.code)
+    constructor() : this(400, "connection-timeout", "SYSTEM-001")
 }
