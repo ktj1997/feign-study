@@ -2,6 +2,7 @@ package com.study.springboot.feign.domain.client
 
 import com.study.springboot.feign.domain.config.FeignConfiguration
 import com.study.springboot.feign.domain.model.SampleApiDto
+import feign.Headers
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.*
 
@@ -9,7 +10,8 @@ import org.springframework.web.bind.annotation.*
 interface SampleFeignClient {
 
     @GetMapping("/path-variable/{id}")
-    fun sampleApiPathVariable(@PathVariable id: Long): SampleApiDto
+    fun sampleApiPathVariable(@PathVariable id: Long,
+                              @RequestHeader("headerKey") header: String): SampleApiDto
 
     @GetMapping("/param")
     fun sampleApiRequestParam(

@@ -18,7 +18,7 @@ class ApiService(
     }
 
     fun pathVariableService(id: Long): SampleApiDto {
-        return sampleFeignClient.sampleApiPathVariable(id)
+        return sampleFeignClient.sampleApiPathVariable(id, "headerValue")
     }
 
 
