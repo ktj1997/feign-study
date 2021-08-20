@@ -6,7 +6,6 @@ import io.github.resilience4j.bulkhead.annotation.Bulkhead
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker
 import io.github.resilience4j.retry.annotation.Retry
 import org.springframework.stereotype.Service
-import java.util.concurrent.TimeoutException
 
 @Service
 class ApiService(

@@ -5,10 +5,9 @@ import com.study.springboot.feign.domain.exception.FeignErrorResponse
 import com.study.springboot.feign.domain.exception.InternalRequestException
 import feign.Response
 import feign.codec.ErrorDecoder
-import org.springframework.stereotype.Component
 import java.nio.charset.Charset
 
-@Component
+
 class FeignErrorDecoder(
         private val objectMapper: ObjectMapper
 ) : ErrorDecoder {
